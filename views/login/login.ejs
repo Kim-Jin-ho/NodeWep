@@ -14,14 +14,14 @@
 <div class="message"><%= loginMessage %></div>
 <div class="buttons">
   <button onclick="location.href='/'" class="float_left">Home</button>
-  <button onclick="location.href='/users/new'" class="float_right">Sign Up</button>
+  <button onclick="location.href='/users/new'" class="float_right">회원가입</button>
 </div>
 <h3>Login</h3>
 <form class="checkValidation" action="/login" method="post">
   <div class="inputs">
     <div class="floats">
-      <label>Email</label>
-      <input class="cvRequired" type="text" name="email" cvRqErrMsg="Please enter your login email." cvRqErrTo="#cvRqErrEmail" value="">
+      <label>계정</label>
+      <input class="cvRequired" type="text" name="email" cvRqErrMsg="Please enter your login email." cvRqErrTo="#cvRqErrEmail" value="" placeholder="ex) 123@abc.com">
       <div id="cvRqErrEmail" class="message"></div>
     </div>
     <div class="floats">
@@ -34,7 +34,7 @@
     <% }) %>
   </div>
   <div class="buttons">
-    <button type="submit">Submit</button>
+    <button type="submit">로그인</button>
   </div>
 </form>
 

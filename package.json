@@ -20,15 +20,16 @@
   "dependencies": {
     "async": "^1.5.2",
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.14.1",
+    "body-parser": "^1.15.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
-    "ejs": "^2.3.3",
-    "express": "^4.13.3",
-    "express-session": "^1.12.1",
-    "method-override": "^2.3.5",
-    "mongoose": "^4.1.7",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.7.2",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sync": "^0.2.5"
   }
 }

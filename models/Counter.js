@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 
-var counterSchema = mongoose.Schema({
+// 페이지 방문자 카운트 스키마정의
+var counterSchema = mongoose.Schema(
+{
   name: {type:String, required:true},
   totalCount: {type:Number, required:true},
   todayCount: {type:Number},

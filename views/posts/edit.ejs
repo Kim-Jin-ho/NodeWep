@@ -20,22 +20,22 @@
   <form class="checkValidation" action="/posts/<%=post._id%>?_method=put" method="post">
     <div class="inputs">
       <div class="floats">
-        <label>Title</label>
+        <label>제목</label>
         <input class="cvRequired" type="text" name="post[title]" cvRqErrMsg="Title is required." cvRqErrTo="#cvErrTitle" value="<%=post.title%>">
         <div id="cvErrTitle" class="message"></div>
       </div>
       <div class="floats">
-        <label>Author</label>
+        <label>작성자</label>
         <input disabled type="text" value="<%= user.nickname %>">
       </div>
       <div class="floats">
-        <label>Body</label>
+        <label>내용</label>
         <textarea class="cvRequired" name="post[body]" cvRqErrMsg="Body is required." cvRqErrTo="#cvErrBody"><%=post.body%></textarea>
         <div id="cvErrBody" class="message"></div>
       </div>
     </div>
     <div class="buttons">
-      <button type="submit">Submit</button>
+      <button type="submit">수정</button>
     </div>
   </form>
 </div>
