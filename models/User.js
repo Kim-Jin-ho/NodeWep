@@ -3,7 +3,7 @@ var bcrypt   = require("bcrypt-nodejs");
 
 // 사용자 정보 스키마 정의
 var userSchema = mongoose.Schema(
-  {
+{
   email: {type:String, required:true, unique:true},
   nickname: {type:String, required:true, unique:true},
   password: {type:String, required:true},

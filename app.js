@@ -43,6 +43,9 @@ app.use(methodOverride("_method"));
 app.use(flash());
 app.use(session({secret:'MySecret'}));
 app.use(countVisitors);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:true}));
+app.use(express.static('public'));
 
 // passport
 // passport 설정
@@ -57,6 +60,10 @@ app.use(passport.session());
 app.use('/', require('./routes/home'));
 app.use('/users', require('./routes/users'));
 app.use('/posts', require('./routes/posts'));
+
+
+// 일정관리
+// app.use('/events',require('./routes/events'));
 
 // start server
 // 서버 실행 하기

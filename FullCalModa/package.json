@@ -1,0 +1,29 @@
+{
+  "name": "FullCalModal-Node",
+  "version": "1.0.0",
+  "description": "FullCalendar Event Modals example from MikeSmithDev.com",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "4.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MikeSmithDev/FullCalModal-Node"
+  },
+  "dependencies": {
+    "express": "4.14.0",
+    "express-favicon": "2.0.0",
+    "compression": "1.6.2",
+    "dot": "1.0.3",
+    "dot-emc": "0.1.2",
+    "moment": "2.15.1"
+  },
+  "bugs": { "url" : "https://github.com/MikeSmithDev/FullCalModal-Node/issues"
+    , "email" : "mike@mikesmithdev.com"
+  },
+  "author": "MikeSmithDev",
+  "license": "MIT"
+}

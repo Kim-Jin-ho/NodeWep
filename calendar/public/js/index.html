@@ -1,0 +1,81 @@
+<link href='../fullcalendar.min.css' rel='stylesheet' />
+<link href='../fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='../lib/moment.min.js'></script>
+<script src='../lib/jquery.min.js'></script>
+<script src='../fullcalendar.min.js'></script>
+<script src='../gcal.min.js'></script>
+<style>
+	body
+	{
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+</style>
+<script >
+var isElemOverDiv = function(draggedItem, dropArea) {
+        var dragged = $(draggedItem)[0].offset;
+
+        var b = $(dropArea);
+        var limitX = parseInt(b.offset().left) + parseInt(b.outerWidth());
+        var limitY = parseInt(b.offset().top) + parseInt(b.outerHeight());
+
+        // Compare
+        if ( limitY >=   parseInt(dragged.top)
+            && limitX >=   parseInt(dragged.left) )
+        {
+            return true;
+        }
+        return false;
+    }
+$(document).ready(function()
+{
+  $.get('/events').done(function(data)
+  {
+    $('#calendar').fullCalendar(
+    {
+      defaultDate: '2016-12-12',
+      navLinks: true, // can click day/week names to navigate views
+      businessHours: true, // display business hours
+      editable: true,
+			navLinks: true, // can click day/week names to navigate views
+			selectable: true,
+			selectHelper: true,
+			eventDrop: function(event, delta, revertFunc) {
+
+        alert(event.title + " was dropped on " + event.start.format());
+
+        if (!confirm("Are you sure about this change?")) {
+            revertFunc();
+        }
+
+    	},
+      header: {left : 'today prev,next',center : 'title',
+      right:'month'},
+      events: {data},
+			select: function(start, end) {
+				var title = prompt('Event Title:');
+				var eventData;
+				if (title) {
+					eventData = {
+						title: title,
+						start: start,
+						end: end
+					};
+					$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+				}
+				$('#calendar').fullCalendar('unselect');
+			},
+    })
+  })
+})
+</script>
+<h1> 캘린더</h1>
+<body style="background-color:white;">
+<div id='calendar' style='margin: 3em 0; font-size: 13px'></div>

@@ -26,6 +26,7 @@ router.post('/login', passport.authenticate('local-login',
   })
 );
 
+
 // logout 페이지 접근 시 처리할 route
 router.get('/logout', function(req, res)
 {
